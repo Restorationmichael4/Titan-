@@ -230,7 +230,7 @@ def language(update: Update, context: CallbackContext):
 def get_word_of_the_day():
     """Fetch word of the day from an API."""
     # Example with Oxford API, replace with a real API
-    url = "https://od-api.oxforddictionaries.com:443/api/v2/entries/en-us/example"
+    url = "https://api.dictionaryapi.dev/api/v2/entries/en/<word>"
     response = requests.get(url, headers={"app_id": "your_app_id", "app_key": "your_app_key"})
     word_data = response.json()
     return word_data["word"]
