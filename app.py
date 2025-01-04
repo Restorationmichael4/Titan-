@@ -8,6 +8,7 @@ from telegram import Update
 from telegram.ext import Updater, CommandHandler, MessageHandler, filters, CallbackContext
 from flask import Flask
 from threading import Thread
+from urllib.parse import quote
 
 # Load environment variables
 load_dotenv()
