@@ -5,7 +5,7 @@ import schedule
 import time
 from dotenv import load_dotenv
 from telegram import Update
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+from telegram.ext import Updater, CommandHandler, MessageHandler, filters, CallbackContext
 from flask import Flask
 from threading import Thread
 
@@ -262,7 +262,7 @@ def main():
     updater.dispatcher.add_handler(CommandHandler("language", language))
 
     # Add message handler for user answers in the quiz
-    updater.dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, check_answer))
+    updater.dispatcher.add_handler(MessageHandler(filters.text & ~filters.command, check_answer))
 
     # Add error handler
     updater.dispatcher.add_error_handler(error)
